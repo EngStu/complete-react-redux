@@ -18,29 +18,21 @@ export class SearchNinja extends Component {
 
   
   render() {
-    const { name, age } = this.props.result;
-    // return (
-    //   <div>
-    //     <form onSubmit={this.handleSubmit}>
-    //       <input onChange={this.handleChange} type="text" placeholder="search ninja name"/>
-    //       <button>Search</button>
-    //     </form>
-    //   </div>
-    // )
-    {
-      return (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <input onChange={this.handleChange} type="text" placeholder="search ninja name"/>
-            <button>Search</button>
-          </form>
-          if (name) {
-            <p>Result: Name: {name} and age was {age}</p>
-          }
-        </div>
-      )
-      
-    }
+    const { result } = this.props;
+    let searchFrom = (
+      <form onSubmit={this.handleSubmit}>
+        <input onChange={this.handleChange} type="text" placeholder="search ninja name"/>
+        <button>Search</button>
+      </form>
+    )
+
+    return (
+      <div>
+        { searchFrom }
+        { result }
+      </div>
+    )
+    
   }
 }
 

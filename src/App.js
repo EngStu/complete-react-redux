@@ -11,7 +11,7 @@ class App extends Component {
       { name: 'Third', age: 15, id: 3 },
       { name: 'aa', age: 30, id: 4 },
     ],
-    result: {}
+    result: ''
   }
 
   addNinja = (ninja) => {
@@ -35,10 +35,12 @@ class App extends Component {
     let result = this.state.ninjas.filter(ninja => {
       return ninja.name === name
     })
+    let fullResult = 'Name: ' + result[0].name + ' and age : ' + result[0].age
     this.setState({
-      result: result[0] // only need object
+      result: fullResult // only need object
     })
-    // console.log(result[0].age)
+    // console.log('Name: ' + result[0].name);
+    
   }
 
   render() {
